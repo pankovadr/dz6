@@ -1,33 +1,33 @@
-#define _CRT_SECURE_NO_WARNINGS
+п»ї#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <locale.h>
 
-	int main()
+int main()
 {
-        setlocale(LC_ALL, "RUS");
-		int N;
-		int sum_digits;
-		printf("Введите число N (N<1000):");
-		if (scanf("%d", &N) != 1) {
-            printf("Ошибка ввода! Пожалуйста, введите целое число.\n");
-            return 1;
-        }
-        if (N >= 1000 || N < 0) {
-            printf("Число должно быть в диапазоне от 0 до 999!\n");
-            return 1;
-        }
-        int hundreds = N / 100;          
-        int tens = (N / 10) % 10;        
-        int units = N % 10;              
-
-        sum_digits = hundreds + tens + units;
-
-        if (sum_digits % 3 == 0) {
-            printf("Сумма цифр числа %d равна %d. Она КРАТНА трем.\n", N, sum_digits);
-        }
-        else {
-            printf("Сумма цифр числа %d равна %d. Она НЕ КРАТНА трем.\n", N, sum_digits);
-        }
-
-        return 0;
+    setlocale(LC_ALL, "RUS");
+    int N;
+    int sum_digits;
+    printf("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ (N<1000):");
+    if (scanf("%d", &N) != 1) {
+        printf("РћС€РёР±РєР° РІРІРѕРґР°! РџРѕР¶Р°Р»СѓР№СЃС‚Р°, РІРІРµРґРёС‚Рµ С†РµР»РѕРµ С‡РёСЃР»Рѕ.\n");
+        return 1;
     }
+    if (N >= 1000 || N < 0) {
+        printf("Р§РёСЃР»Рѕ РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ РІ РґРёР°РїР°Р·РѕРЅРµ РѕС‚ 0 РґРѕ 999!\n");
+        return 1;
+    }
+    int hundreds = N / 100;
+    int tens = (N / 10) % 10;
+    int units = N % 10;
+
+    sum_digits = hundreds + tens + units;
+
+    if (sum_digits % 3 == 0) {
+        printf("РЎСѓРјРјР° С†РёС„СЂ С‡РёСЃР»Р° %d СЂР°РІРЅР° %d. РћРЅР° РљР РђРўРќРђ С‚СЂРµРј.\n", N, sum_digits);
+    }
+    else {
+        printf("РЎСѓРјРјР° С†РёС„СЂ С‡РёСЃР»Р° %d СЂР°РІРЅР° %d. РћРЅР° РќР• РљР РђРўРќРђ С‚СЂРµРј.\n", N, sum_digits);
+    }
+
+    return 0;
+}
